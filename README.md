@@ -1,27 +1,27 @@
-# Airbnb Clone Project
+# Zenvyra
 
-A full-stack Airbnb-inspired web application built using **Node.js, Express.js, MongoDB, and EJS**.  
+A full-stack rental listing web application built using **Node.js, Express.js, MongoDB, and EJS**.  
 This project allows users to browse listings, add new listings, view listing details, and manage reviews.
 
-> **Note:** This is an educational/demo project inspired by Airbnb and is not affiliated with Airbnb.
+> **Note:** This is an educational/demo project and is not affiliated with Airbnb or any other brand.
 
 ---
 
 ## Live Demo
 
-🔗 Live Website: https://airbnb-al4a.onrender.com
+🔗 Live Website: https://zenvyra-app.onrender.com
 
 ---
 
 ## GitHub Repository
 
-🔗 GitHub Repo: https://github.com/JEETJM/airbnb
+🔗 GitHub Repo: https://github.com/JEETJM/zenvyra
 
 ---
 
 ## Project Overview
 
-This project is a complete Airbnb-style listing platform where users can:
+Zenvyra is a complete rental listing platform where users can:
 
 - View all listings
 - View a single listing in detail
@@ -102,13 +102,14 @@ The following npm packages are used in this project:
 - ejs-mate
 - method-override
 - joi
+- dotenv
 
 ---
 
 ## Folder Structure
 
 ```bash
-airbnb/
+zenvyra/
 │── models/
 │   ├── listing.js
 │   └── review.js
@@ -139,3 +140,5 @@ airbnb/
 │── package.json
 │── package-lock.json
 │── README.md
+│── .env
+│── .gitignore
