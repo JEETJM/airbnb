@@ -24,22 +24,23 @@
 
 // initDB();
 
-
 // const mongoose = require("mongoose");
 // const initData = require("./data.js");
 // const Listing = require("../models/listing.js");
 
 // Atlas connection string
+// require("dotenv").config();
+require("dotenv").config();
 const mongoose = require("mongoose");
 const initData = require("./data.js");
 const Listing = require("../models/listing.js");
 
-const dbUrl =
-  "mongodb+srv://jm382118_db_user:Jeet2004JMMJ1904@cluster0.mp9zztg.mongodb.net/airbnb?retryWrites=true&w=majority";
+// Database URL (Atlas or Local)
+const dbUrl = process.env.MONGO_URL || "mongodb://127.0.0.1:27017/AIRBNB";
 
 async function main() {
   await mongoose.connect(dbUrl);
-  console.log("Connected to Atlas DB");
+  console.log("Connected to DB");
 }
 
 const initDB = async () => {
