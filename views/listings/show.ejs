@@ -1,271 +1,199 @@
 <% layout("layouts/boilerplates") %>
 
   <div class="show-wrapper">
-
     <div class="show-container">
-      <!-- 
-      IMAGE -->
-      <!-- <div class="image-section">
-        <img src="<%= listing.image.url %>" alt="Listing Image">
-        <div class="heart" onclick="toggleWishlist(this)">❤</div>
-      </div> -->
-
-
-
-
-
-
-      <!-- <div class="image-section">
-
-<div id="carouselExample" class="carousel slide">
-
-<div class="carousel-inner">
-
-<div class="carousel-item active">
-<img src="<%= listing.image.url %>" class="d-block w-100">
-</div>
-
-</div>
-
-<button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-<span class="carousel-control-prev-icon"></span>
-</button>
-
-<button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-<span class="carousel-control-next-icon"></span>
-</button>
-
-</div>
-
-</div> -->
-
-
-
-
       <div id="carouselExample" class="carousel slide">
         <div class="carousel-inner">
 
           <!-- Image 1 (DB Image) -->
-          <div class="carousel-item active ">
-            <img src="<%= listing.image.url %>" class="d-block w-100">
+          <div class="carousel-item active">
+            <img src="<%= listing.image.url %>" class="d-block w-100" alt="Listing Image">
             <div class="heart" onclick="toggleWishlist(this)">❤</div>
-
           </div>
 
           <!-- Image 2 -->
-          <div class="carousel-item ">
-            <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511" class="d-block w-100">
+          <div class="carousel-item">
+            <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511" class="d-block w-100" alt="Image 2">
             <div class="heart" onclick="toggleWishlist(this)">❤</div>
-
           </div>
 
           <!-- Image 3 -->
           <div class="carousel-item">
-            <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85" class="d-block w-100">
+            <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85" class="d-block w-100" alt="Image 3">
             <div class="heart" onclick="toggleWishlist(this)">❤</div>
-
           </div>
 
           <!-- Image 4 -->
           <div class="carousel-item">
-            <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2" class="d-block w-100">
+            <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2" class="d-block w-100" alt="Image 4">
             <div class="heart" onclick="toggleWishlist(this)">❤</div>
-
           </div>
 
           <!-- Image 5 -->
           <div class="carousel-item">
-            <img src="https://images.unsplash.com/photo-1551776235-dde6d482980b" class="d-block w-100">
+            <img src="https://images.unsplash.com/photo-1551776235-dde6d482980b" class="d-block w-100" alt="Image 5">
             <div class="heart" onclick="toggleWishlist(this)">❤</div>
-
           </div>
 
           <!-- Image 6 -->
           <div class="carousel-item">
-            <img src="https://images.unsplash.com/photo-1560185007-c5ca9d2c014d" class="d-block w-100">
+            <img src="https://images.unsplash.com/photo-1560185007-c5ca9d2c014d" class="d-block w-100" alt="Image 6">
             <div class="heart" onclick="toggleWishlist(this)">❤</div>
-
           </div>
 
           <!-- Image 7 -->
           <div class="carousel-item">
-            <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267" class="d-block w-100">
+            <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267" class="d-block w-100" alt="Image 7">
             <div class="heart" onclick="toggleWishlist(this)">❤</div>
-
           </div>
 
           <!-- Image 8 -->
           <div class="carousel-item">
-            <img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae" class="d-block w-100">
+            <img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae" class="d-block w-100" alt="Image 8">
             <div class="heart" onclick="toggleWishlist(this)">❤</div>
-
           </div>
 
           <!-- Image 9 -->
           <div class="carousel-item">
-            <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb" class="d-block w-100">
+            <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb" class="d-block w-100" alt="Image 9">
             <div class="heart" onclick="toggleWishlist(this)">❤</div>
-
           </div>
 
           <!-- Image 10 -->
           <div class="carousel-item">
-            <img src="https://images.unsplash.com/photo-1560184897-ae75f418493e" class="d-block w-100">
+            <img src="https://images.unsplash.com/photo-1560184897-ae75f418493e" class="d-block w-100" alt="Image 10">
             <div class="heart" onclick="toggleWishlist(this)">❤</div>
-
           </div>
 
         </div>
 
-        <!-- Left Arrow -->
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
           <span class="carousel-control-prev-icon"></span>
         </button>
 
-        <!-- Right Arrow -->
         <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
           <span class="carousel-control-next-icon"></span>
         </button>
-
       </div>
-
-
-
-
-
-
 
       <!-- DETAILS -->
       <div class="details-section">
-
         <h1 class="listing-title">
           <%= listing.title %>
         </h1>
 
         <p class="price-tag">
           ₹ <%= listing.price.toLocaleString("en-IN") %>
-            <span>/ night</span>
+            <span style="color: darkturquoise;">/ night</span>
+        </p>
+
+        <p>
+          <i>
+            <b >
+              Owned by :
+              <%= listing.author ? listing.author.username : "Unknown User" %>
+            </b>
+          </i>
         </p>
 
         <p class="desc">
           <%= listing.description %>
         </p>
 
-        <div class="location">
+        <p class="location">
           📍 <%= listing.location %>, <%= listing.country %>
-        </div>
+        </p>
 
-        <div class="btn-area">
-
-          <a href="/listings/<%= listing._id %>/edit" class="btn edit">
-            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF">
-              <path
-                d="M200-200h57l391-391-57-57-391 391v57Zm-80 80v-170l528-527q12-11 26.5-17t30.5-6q16 0 31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Zm640-584-56-56 56 56Zm-141 85-28-29 57 57-29-28Z" />
-            </svg>
-            Edit
-          </a>
-
-          <form method="POST" action="/listings/<%= listing._id %>?_method=DELETE"
-            onsubmit="return confirmDeleteListing()">
-
-            <button class="btn delete">
+        <!-- LISTING BUTTONS: ONLY LISTING OWNER CAN SEE -->
+        <% if (currentUser && listing.author && currentUser._id.equals(listing.author._id)) { %>
+          <div class="btn-area">
+            <a href="/listings/<%= listing._id %>/edit" class="btn edit">
               <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
                 fill="#FFFFFF">
                 <path
-                  d="m376-300 104-104 104 104 56-56-104-104 104-104-56-56-104 104-104-104-56 56 104 104-104 104 56 56Zm-96 180q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520Zm-400 0v520-520Z" />
-              </svg>Delete</button>
-          </form>
+                  d="M200-200h57l391-391-57-57-391 391v57Zm-80 80v-170l528-527q12-11 26.5-17t30.5-6q16 0 31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Zm640-584-56-56 56 56Zm-141 85-28-29 57 57-29-28Z" />
+              </svg>
+              Edit
+            </a>
 
-        </div>
-
+            <form method="POST" action="/listings/<%= listing._id %>?_method=DELETE"
+              onsubmit="return confirmDeleteListing()">
+              <button class="btn delete" type="submit">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                  fill="#FFFFFF">
+                  <path
+                    d="m376-300 104-104 104 104 56-56-104-104 104-104-56-56-104 104-104-104-56 56 104 104-104 104 56 56Zm-96 180q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520Zm-400 0v520-520Z" />
+                </svg>
+                Delete
+              </button>
+            </form>
+          </div>
+          <% } %>
       </div>
-
-
-
 
       <!-- REVIEW BOX -->
       <div class="review-box">
+        <h3 style="color: rgb(105, 255, 105);">Leave a Review</h3>
 
-        <h3>Leave a Review</h3>
+        <form id="reviewForm" action="/listings/<%= listing._id %>/reviews" method="POST" novalidate>
+          <div class="rating-wrapper mb-3">
+            <fieldset class="starability-slot" id="ratingGroup">
+              <input type="radio" id="no-rate" class="input-no-rate" name="review[rating]" value="" checked
+                aria-label="No rating." />
 
-        <!-- <form action="/listings/<%= listing._id %>/reviews" method="POST" class="needs-validation" novalidate> -->
-        <form id="reviewForm" action="/listings/<%= listing._id %>/reviews" method="POST" class="needs-validation"
-          novalidate>
+              <input type="radio" id="first-rate1" name="review[rating]" value="1" />
+              <label for="first-rate1" title="Terrible">1 star</label>
 
-          <!-- STAR RATING -->
-          <div class="star-rating">
+              <input type="radio" id="first-rate2" name="review[rating]" value="2" />
+              <label for="first-rate2" title="Not good">2 stars</label>
 
-            <input required type="radio" name="review[rating]" id="star5" value="5">
-            <label for="star5">★</label>
+              <input type="radio" id="first-rate3" name="review[rating]" value="3" />
+              <label for="first-rate3" title="Average">3 stars</label>
 
-            <input type="radio" name="review[rating]" id="star4" value="4">
-            <label for="star4">★</label>
+              <input type="radio" id="first-rate4" name="review[rating]" value="4" />
+              <label for="first-rate4" title="Very good">4 stars</label>
 
-            <input type="radio" name="review[rating]" id="star3" value="3">
-            <label for="star3">★</label>
+              <input type="radio" id="first-rate5" name="review[rating]" value="5" />
+              <label for="first-rate5" title="Amazing">5 stars</label>
 
-            <input type="radio" name="review[rating]" id="star2" value="2">
-            <label for="star2">★</label>
+              <span class="starability-focus-ring"></span>
+            </fieldset>
 
-            <input type="radio" name="review[rating]" id="star1" value="1">
-            <label for="star1">★</label>
+            <p id="ratingMessage" class="rating-message">Select a rating</p>
 
+            <div class="rating-error" id="ratingError">
+              Please select a rating 🥴
+            </div>
           </div>
 
-          <!-- <div class="invalid-feedback rating-error" style="color: aquamarine;">
-            Please select a rating
-          </div> -->
-          <div class="invalid-feedback rating-error" id="ratingError">
-            Please select a rating 🥴
-          </div>
-
-          <!-- COMMENT -->
-          <div class="comment-box">
-
+          <div class="comment-box mb-3">
             <label class="form-label">Comment</label>
+            <textarea id="reviewComment" name="review[comment]" class="form-control" rows="4"
+              placeholder="Write your experience..."></textarea>
 
-            <textarea required name="review[comment]" class="form-control"
-              style="font-family:cursive; color:rgb(6, 136, 176);" placeholder="Write your experience..."></textarea>
-
-            <div class="invalid-feedback" id="bold" style="color:  #f19494">
+            <div class="comment-error" id="commentError">
               Please add some comments for review 🥴
             </div>
-
-            <div class="valid-feedback" style="color:greenyellow">
-              Aww !! Nice Exp's ...🍾
-            </div>
-
           </div>
 
-          <button type="submit" class="btn-review">
-            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF">
-              <path
-                d="m424-296 282-282-56-56-226 226-114-114-56 56 170 170Zm56 216q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
-            </svg>
-            Submit Review
-          </button>
-
+          <button type="submit" class="btn-review">Submit Review</button>
         </form>
-
       </div>
-
     </div>
-
+    <br>
+    <h2 class="reviews-heading">Google Map</h2>
 
     <!-- REVIEWS -->
-    <% if(listing.reviews && listing.reviews.length> 0){ %>
+    <!-- REVIEWS -->
+    <% if (listing.reviews && listing.reviews.length> 0) { %>
       <div class="reviews-bottom">
-
         <h2 class="reviews-heading">Guest Reviews</h2>
 
         <div class="reviews-list">
-
-          <% listing.reviews.forEach((review)=>{ %>
-
+          <% listing.reviews.forEach((review)=> { %>
             <div class="review-item">
-
               <div class="stars">
-                <% for(let i=1;i<=review.rating;i++){ %>
+                <% for (let i=1; i <=review.rating; i++) { %>
                   ★
                   <% } %>
               </div>
@@ -273,27 +201,47 @@
               <p>
                 <%= review.comment %>
               </p>
-              <!-- DELETE REVIEW BUTTON -->
-              <form action="/listings/<%= listing._id %>/reviews/<%= review._id %>?_method=DELETE" method="POST"
-                onsubmit="return confirmDeleteReview()">
 
-                <button class="delete-review-btn">
-                  <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"
-                    fill="#FFFFFF">
-                    <path
-                      d="M312-144q-29.7 0-50.85-21.15Q240-186.3 240-216v-480h-48v-72h192v-48h192v48h192v72h-48v479.57Q720-186 698.85-165T648-144H312Zm336-552H312v480h336v-480ZM384-288h72v-336h-72v336Zm120 0h72v-336h-72v336ZM312-696v480-480Z" />
-                  </svg>Delete</button>
+              <p class="review-user">
+                Reviewed by :
+                <span>
+                  <%= review.author ? review.author.username : "Anonymous User" %>
+                </span>
+              </p>
 
-              </form>
+              <% if (currentUser && review.author && currentUser._id.equals(review.author._id)) { %>
+                <div class="review-actions">
+                  <a href="/listings/<%= listing._id %>/reviews/<%= review._id %>/edit" class="edit-review-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"
+                      fill="#FFFFFF">
+                      <path
+                        d="M200-200h57l391-391-57-57-391 391v57Zm-80 80v-170l528-527q12-11 26.5-17t30.5-6q16 0 31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Z" />
+                    </svg>
+                    Edit
+                  </a>
 
+                  <form action="/listings/<%= listing._id %>/reviews/<%= review._id %>?_method=DELETE" method="POST"
+                    onsubmit="return confirmDeleteReview()">
+                    <button class="delete-review-btn" type="submit">
+                      <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"
+                        fill="#FFFFFF">
+                        <path
+                          d="M312-144q-29.7 0-50.85-21.15Q240-186.3 240-216v-480h-48v-72h192v-48h192v48h192v72h-48v479.57Q720-186 698.85-165T648-144H312Zm336-552H312v480h336v-480ZM384-288h72v-336h-72v336Zm120 0h72v-336h-72v336ZM312-696v480-480Z" />
+                      </svg>
+                      Delete
+                    </button>
+                  </form>
+                </div>
+                <% } %>
             </div>
-
             <% }) %>
-
         </div>
-
       </div>
-
-      <% } %>
-
+      <% } else { %>
+        <div class="reviews-bottom">
+          <h2 class="reviews-heading">Guest Reviews</h2>
+          <br>
+          <p style="color: #ddd; text-align: center;">No reviews yet. Be the first one to review this place!</p>
+        </div>
+        <% } %>
   </div>

@@ -1,128 +1,63 @@
 const express = require("express");
 const router = express.Router();
-//require listings by models
-const Listing = require("../models/listing.js");
-// wrap Async equire
-const WrapAsync = require("../utils/WrapAsync.js");
-//ExpressError require *************
-const ExpressError = require("../utils/ExpressError.js");
-//FOR JOI SCHEMA FILE REQUIRE.               ..................
-const { listingSchema, reviewSchema } = require("../Schema.js");
-// ExpressError require *************
-// const ExpressError = require("../utils/ExpressError.js");
 
-// function for  check validate listings-------------------------------------------++++++++++++++++++++++++++++++++++++++--------
+const WrapAsync = require("../utils/WrapAsync.js");
+const ExpressError = require("../utils/ExpressError.js");
+const { isLoggedIn, isListingOwner } = require("../middleware.js");
+const { listingSchema } = require("../Schema.js");
+const listingsController = require("../controllers/listings.js");
+const upload = require("../utils/multer"); // memory storage multer
+
 const validateListing = (req, res, next) => {
   let { error } = listingSchema.validate(req.body);
-  // console.log(resultt);
+
   if (error) {
-    let errMsg = error.details.map((el) => el.message).join(",");
+    let errMsg = error.details.map((el) => el.message).join(", ");
     throw new ExpressError(400, errMsg);
-  } else next();
+  }
+  next();
 };
 
-// SEARCH ROUTE
-router.get(
-  "/search",
-  WrapAsync(async (req, res) => {
-    let { query } = req.query;
+// INDEX + CREATE
+router
+  .route("/")
+  .get(WrapAsync(listingsController.index))
+  .post(
+    isLoggedIn,
+    upload.single("listingImage"),
+    validateListing,
+    WrapAsync(listingsController.createListings)
+  );
 
-    const listings = await Listing.find({
-      $or: [
-        { location: { $regex: query, $options: "i" } },
-        { country: { $regex: query, $options: "i" } },
-        { title: { $regex: query, $options: "i" } },
-      ],
-    });
+// NEW
+router.get("/new", isLoggedIn, listingsController.renderNewForm);
 
-    res.render("./listings/index.ejs", {
-      allListings: listings,
-      query: query,
-    });
-  }),
-);
+// SEARCH
+router.get("/search", WrapAsync(listingsController.searchListings));
 
-// //create a  basic home root .
-// router.get("/", async (req, res) => {
-//   const allListings = await Listing.find({});
-//   // res.send(allListings);
-//   res.render("./listings/index.ejs", { allListings });
-// });
-
-//INDEX ROUTE . ..
-router.get("/", async (req, res) => {
-  const allListings = await Listing.find({});
-  res.render("./listings/index.ejs", { allListings });
-});
-
-//NEW ROUTE !!
-router.get("/new", (req, res) => {
-  res.render("./listings/new.ejs");
-});
-
-//SHOW ROUTE
-router.get(
-  "/:id",
-  WrapAsync(async (req, res) => {
-    let { id } = req.params;
-
-    const listing = await Listing.findById(id).populate("reviews");
-
-    res.render("./listings/show.ejs", { listing });
-  }),
-);
-
-//Craete ROUTE .
-
-router.post(
-  "/",
-  validateListing,
-  WrapAsync(async (req, res, next) => {
-    let resultt = listingSchema.validate(req.body);
-    // console.log(resultt);
-    if (resultt.err) {
-      throw new ExpressError(400, resultt.err);
-    }
-    const newListing = new Listing(req.body.listing);
-    await newListing.save();
-    req.flash("success", "New Listings Created !");
-    res.redirect("/listings");
-  }),
-);
-
-//EDIT  ROUTE. ..
+// EDIT
 router.get(
   "/:id/edit",
-  WrapAsync(async (req, res) => {
-    let { id } = req.params;
-    const listing = await Listing.findById(id);
-    res.render("./listings/edit.ejs", { listing });
-  }),
+  isLoggedIn,
+  isListingOwner,
+  WrapAsync(listingsController.editListings)
 );
 
-//UPDATE ROUTE .................
-router.put(
-  "/:id",
-  validateListing,
-  WrapAsync(async (req, res) => {
-    let { id } = req.params;
-    await Listing.findByIdAndUpdate(id, { ...req.body.listing });
-        req.flash("success", "Listing Updated Successfully !");
-
-    res.redirect(`/listings/${id}`);
-  }),
-);
-//DELETE ROUTE . .
-router.delete(
-  "/:id",
-  WrapAsync(async (req, res) => {
-    let { id } = req.params;
-
-    await Listing.findByIdAndDelete(id);
-    req.flash("success", "Listing Deleted !");
-
-    res.redirect("/listings");
-  }),
-);
+// SHOW + UPDATE + DELETE
+router
+  .route("/:id")
+  .get(WrapAsync(listingsController.showListings))
+  .put(
+    isLoggedIn,
+    isListingOwner,
+    upload.single("listingImage"),
+    validateListing,
+    WrapAsync(listingsController.updateListings)
+  )
+  .delete(
+    isLoggedIn,
+    isListingOwner,
+    WrapAsync(listingsController.deleteListings)
+  );
 
 module.exports = router;

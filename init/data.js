@@ -869,6 +869,176 @@ const sampleListings = [
     location: "Cape Town",
     country: "South Africa",
   },
+  {
+    title: "Rustic Farm Stay",
+    description: "Enjoy countryside life with animals and fresh food.",
+    image: {
+      url: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e",
+    },
+    price: 1800,
+    location: "Tuscany",
+    country: "Italy",
+  },
+  {
+    title: "Royal Atlantis Sky Suite",
+    description: "Ultra premium sky suite with 360° city and ocean view.",
+    image: {
+      url: "https://images.unsplash.com/photo-1560185008-b033106af5c3",
+    },
+    price: 8200,
+    location: "Dubai",
+    country: "United Arab Emirates",
+  },
+  {
+    title: "Crystal Lagoon Resort Suite",
+    description: "Luxury lagoon side suite with private infinity pool.",
+    image: {
+      url: "https://images.unsplash.com/photo-1560448075-bb485b067938",
+    },
+    price: 7600,
+    location: "Bora Bora",
+    country: "French Polynesia",
+  },
+  {
+    title: "Imperial Crown Palace Room",
+    description: "Royal palace interior with antique luxury design.",
+    image: {
+      url: "https://images.unsplash.com/photo-1590490359683-658d3d23f972",
+    },
+    price: 6900,
+    location: "London",
+    country: "United Kingdom",
+  },
+  {
+    title: "Aurora Arctic Glass Suite",
+    description: "Glass igloo luxury suite to watch northern lights.",
+    image: {
+      url: "https://images.unsplash.com/photo-1505692794403-34f92b29a6e3",
+    },
+    price: 7400,
+    location: "Lapland",
+    country: "Finland",
+  },
+  {
+    title: "Santorini White Pearl Villa",
+    description: "Luxury cliffside villa with stunning sea views.",
+    image: {
+      url: "https://images.unsplash.com/photo-1505691938895-1758d7feb511",
+    },
+    price: 6700,
+    location: "Santorini",
+    country: "Greece",
+  },
+  {
+    title: "Tokyo Skyline Executive Suite",
+    description: "Modern executive suite with Tokyo night skyline view.",
+    image: {
+      url: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267",
+    },
+    price: 6100,
+    location: "Tokyo",
+    country: "Japan",
+  },
+  {
+    title: "Maldives Overwater Villa",
+    description: "Luxury villa above crystal clear ocean water.",
+    image: {
+      url: "https://images.unsplash.com/photo-1582719508461-905c673771fd",
+    },
+    price: 8900,
+    location: "Maldives",
+    country: "Maldives",
+  },
+  {
+    title: "Venice Grand Canal Suite",
+    description: "Romantic luxury suite overlooking the Grand Canal.",
+    image: {
+      url: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2",
+    },
+    price: 5900,
+    location: "Venice",
+    country: "Italy",
+  },
+  {
+    title: "Alpine Snow Luxury Chalet",
+    description: "Private luxury chalet with snowy mountain views.",
+    image: {
+      url: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750",
+    },
+    price: 6200,
+    location: "Zermatt",
+    country: "Switzerland",
+  },
+  {
+    title: "Miami Oceanfront Penthouse",
+    description: "Ultra luxury penthouse with private ocean deck.",
+    image: {
+      url: "https://images.unsplash.com/photo-1507089947368-19c1da9775ae",
+    },
+    price: 7100,
+    location: "Miami",
+    country: "United States",
+  },
+  {
+    title: "Dubai Burj View Elite Suite",
+    description: "Premium suite with Burj Khalifa view terrace.",
+    image: {
+      url: "https://images.unsplash.com/photo-1600585152915-d208bec867a1",
+    },
+    price: 8300,
+    location: "Dubai",
+    country: "United Arab Emirates",
+  },
+  {
+    title: "Paris Diamond Luxury Room",
+    description: "Elegant luxury suite near Eiffel Tower.",
+    image: {
+      url: "https://images.unsplash.com/photo-1616046229478-9901c5536a45",
+    },
+    price: 6500,
+    location: "Paris",
+    country: "France",
+  },
+  {
+    title: "Singapore Marina Bay Suite",
+    description: "High-end suite overlooking Marina Bay skyline.",
+    image: {
+      url: "https://images.unsplash.com/photo-1600210492493-0946911123ea",
+    },
+    price: 7200,
+    location: "Singapore",
+    country: "Singapore",
+  },
+  {
+    title: "Royal Palace Heritage Suite",
+    description: "Traditional royal palace stay with luxury decor.",
+    image: {
+      url: "https://images.unsplash.com/photo-1584132967334-10e028bd69f7",
+    },
+    price: 5400,
+    location: "Udaipur",
+    country: "India",
+  },
+  {
+    title: "Cape Town Ocean Cliff Villa",
+    description: "Cliffside luxury villa with Atlantic ocean views.",
+    image: {
+      url: "https://images.unsplash.com/photo-1591088398332-8a7791972843",
+    },
+    price: 6800,
+    location: "Cape Town",
+    country: "South Africa",
+  },
 ];
 
-module.exports = { data: sampleListings };
+const initializedListings = sampleListings.map((listing, index) => ({
+  ...listing,
+  image: {
+    url: listing.image.url,
+    filename: `Zenvyra/listings/sample-${index + 1}`,
+  },
+}));
+
+module.exports = { data: initializedListings };
+
+// module.exports = { data: sampleListings };

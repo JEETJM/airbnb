@@ -1,42 +1,39 @@
+// // require("dotenv").config();
+// require("dotenv").config({ path: "../.env" });
 // const mongoose = require("mongoose");
 // const initData = require("./data.js");
 // const Listing = require("../models/listing.js");
-
-// const MONGO_URL = "mongodb://127.0.0.1:27017/AIRBNB";
-
-// main()
-//   .then(() => {
-//     console.log("connected to DB");
-//   })
-//   .catch((err) => {
-//     console.log(err);
-//   });
+// // console.log("DB URL:", process.env.MONGO_URL);
+// // Database URL (Atlas or Local)
+// const dbUrl = process.env.MONGO_URL || "mongodb://127.0.0.1:27017/airbnb";
 
 // async function main() {
-//   await mongoose.connect(MONGO_URL);
+//   await mongoose.connect(dbUrl);
+//   console.log("Connected to DB");
 // }
 
 // const initDB = async () => {
-//   // await Listing.deleteMany({});
+//   await Listing.deleteMany({});
+//   initData.data.map((obj) => ({ ...obj, author: "69be432487b6a9538b6970f6" }));
 //   await Listing.insertMany(initData.data);
-//   console.log("data was initialized");
+//   console.log("Data was initialized");
 // };
 
-// initDB();
+// main()
+//   .then(() => initDB())
+//   .catch((err) => console.log(err));
 
-// const mongoose = require("mongoose");
-// const initData = require("./data.js");
-// const Listing = require("../models/listing.js");
 
-// Atlas connection string
-// require("dotenv").config();
-require("dotenv").config();
+
+
+
+
+require("dotenv").config({ path: "../.env" });
 const mongoose = require("mongoose");
 const initData = require("./data.js");
 const Listing = require("../models/listing.js");
 
-// Database URL (Atlas or Local)
-const dbUrl = process.env.MONGO_URL || "mongodb://127.0.0.1:27017/AIRBNB";
+const dbUrl = process.env.MONGO_URL || "mongodb://127.0.0.1:27017/airbnb";
 
 async function main() {
   await mongoose.connect(dbUrl);
@@ -45,7 +42,13 @@ async function main() {
 
 const initDB = async () => {
   await Listing.deleteMany({});
-  await Listing.insertMany(initData.data);
+
+  const newData = initData.data.map((obj) => ({
+    ...obj,
+    author: "69be432487b6a9538b6970f6",
+  }));
+
+  await Listing.insertMany(newData);
   console.log("Data was initialized");
 };
 

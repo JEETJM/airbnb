@@ -1,0 +1,35 @@
+<% layout("layouts/boilerplates") %>
+
+<div class="auth-wrapper">
+  <div class="auth-box auth-animate">
+    <div class="auth-header">
+      <div class="auth-icon-circle">✏️</div>
+      <h2>Edit Review</h2>
+      <p>Update your review for <%= listing.title %></p>
+    </div>
+
+    <form action="/listings/<%= listing._id %>/reviews/<%= review._id %>?_method=PUT" method="POST" class="auth-form needs-validation" novalidate>
+
+      <div class="form-group">
+        <label>Rating ⭐</label>
+        <select name="review[rating]" class="form-control" required>
+          <option value="">Select rating</option>
+          <option value="1" <%= review.rating == 1 ? "selected" : "" %>>1</option>
+          <option value="2" <%= review.rating == 2 ? "selected" : "" %>>2</option>
+          <option value="3" <%= review.rating == 3 ? "selected" : "" %>>3</option>
+          <option value="4" <%= review.rating == 4 ? "selected" : "" %>>4</option>
+          <option value="5" <%= review.rating == 5 ? "selected" : "" %>>5</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Comment 💬</label>
+        <textarea name="review[comment]" class="form-control" required><%= review.comment %></textarea>
+      </div>
+
+      <button type="submit" class="auth-btn-main">
+        <span>Update Review</span>
+      </button>
+    </form>
+  </div>
+</div>
