@@ -1,23 +1,14 @@
-# 🚀 Zenvyra
+# 🚀 Zenvyra – Full Stack Rental Listing Platform
 
-<p align="center">
-<img src="https://readme-typing-svg.herokuapp.com?font=Orbitron&size=28&duration=4000&color=00F7FF&center=true&vCenter=true&width=600&lines=Full+Stack+Rental+Listing+Platform;Built+with+Node.js+%7C+MongoDB+%7C+Express;Zenvyra+Web+Application" />
-</p>
 
-<p align="center">
 
-[![HTML](https://img.shields.io/badge/HTML5-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white)](#)
-[![CSS](https://img.shields.io/badge/CSS3-%231572B6.svg?&style=for-the-badge&logo=css3&logoColor=white)](#)
-[![JavaScript](https://img.shields.io/badge/JavaScript-%23323330.svg?&style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)](#)
-[![Bootstrap](https://img.shields.io/badge/Bootstrap-%23563D7C.svg?&style=for-the-badge&logo=bootstrap&logoColor=white)](#)
-[![NodeJS](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)](#)
-[![ExpressJS](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge)](#)
-[![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)](#)
-[![EJS](https://img.shields.io/badge/EJS-Template-yellow?style=for-the-badge)](#)
-[![Render](https://img.shields.io/badge/Render-Deploy-black?style=for-the-badge&logo=render&logoColor=white)](#)
-[![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github)](#)
 
-</p>
+
+
+
+
+
+\
 
 ---
 
@@ -33,176 +24,270 @@
 
 ---
 
-# 🧠 About The Project
+# 🌟 Overview
 
-**Zenvyra** is a full-stack rental listing web application inspired by modern rental platforms.
+**Zenvyra** is a modern full-stack Airbnb-style rental listing platform where users can explore, create, review, and manage property listings with a premium UI and smooth animations.
 
-Users can browse rental listings, view detailed property information, and leave reviews.
+🔥 Designed with **performance, scalability, and clean architecture** in mind.
 
-This project demonstrates how to build and deploy a **complete CRUD web application** using modern backend technologies.
+⚠️ This project is created for **learning purposes only** and is not affiliated with Airbnb.
 
-⚠️ This project is created for **learning purposes only** and is not affiliated with Airbnb or any trademarked platform.
+---
+
+# ✨ Core Features
+
+## 🏠 Listing System
+
+* View all listings (Homepage auto-load)
+* View detailed listing page
+* Create new listing with image upload
+* Edit & update listing
+* Delete listing
+
+---
+
+## ⭐ Review System
+
+* Add reviews to listings
+* Delete reviews
+* User-based review ownership
+* Dynamic rating UI
+
+---
+
+## 👤 Authentication & Security
+
+* Login / Signup system
+* Passport.js authentication
+* Session-based login
+* Protected routes (authorization)
+* Password hashing (passport-local-mongoose)
+
+---
+
+## 🖼️ Image Upload
+
+* Cloudinary integration
+* Multer middleware
+* Optimized image storage
+
+---
+
+## 🗺️ Maps & Location
+
+* Mapbox integration
+* Marker popup with listing details
+* Location-based visualization
+
+---
+
+## 🔍 Search & Filtering
+
+* Search by title, location, country
+* Category-based filtering (future-ready)
+* Dynamic UI filtering
+
+---
+
+## 🎨 UI / UX
+
+* Fully responsive design 📱
+* Dark / Light mode 🌙
+* Smooth animations & hover effects
+* Premium Airbnb-style cards
+* Clean navbar + footer
+
+---
+
+## ⚡ Backend Features
+
+* RESTful routing
+* MVC architecture
+* Async error handling (WrapAsync)
+* Custom error middleware
+* Joi validation schemas
+* Modular controllers & routes
 
 ---
 
 # 🛠 Tech Stack
 
-<p align="center">
+## 💻 Frontend
 
-<img src="https://skillicons.dev/icons?i=html" height="50">
-<img src="https://skillicons.dev/icons?i=css" height="50">
-<img src="https://skillicons.dev/icons?i=javascript" height="50">
-<img src="https://skillicons.dev/icons?i=bootstrap" height="50">
-<img src="https://skillicons.dev/icons?i=nodejs" height="50">
-<img src="https://skillicons.dev/icons?i=express" height="50">
-<img src="https://skillicons.dev/icons?i=mongodb" height="50">
-<img src="https://skillicons.dev/icons?i=github" height="50">
+* HTML5
+* CSS3 (Advanced Animations)
+* JavaScript
+* Bootstrap
+* EJS Template Engine
 
-</p>
+## ⚙️ Backend
 
----
+* Node.js
+* Express.js
 
-# ⚙️ Technologies Used
+## 🗄️ Database
 
-### Frontend
+* MongoDB
+* Mongoose
 
-- HTML5
-- CSS3
-- JavaScript
-- Bootstrap
-- EJS Template Engine
+## 🔐 Authentication
 
-### Backend
+* Passport.js
+* express-session
 
-- Node.js
-- Express.js
+## ☁️ Cloud Services
 
-### Database
-
-- MongoDB
-- Mongoose
-
-### Deployment
-
-- Render
-- MongoDB Atlas
-- GitHub
+* Cloudinary (Images)
+* Mapbox (Maps)
+* Render (Deployment)
 
 ---
 
-# ✨ Features
-
-### 🏠 Listing System
-
-- View all listings
-- View single listing details
-- Add new listing
-- Edit listing
-- Delete listing
-
----
-
-### ⭐ Review System
-
-- Add review to listings
-- Delete review
-- Store reviews in MongoDB database
-
----
-
-### 🎨 UI Features
-
-- Responsive Navbar
-- Modern card layout
-- Clean footer
-- Mobile responsive design
-- EJS template rendering
-- Method Override for PUT & DELETE
-
----
-
-### ⚡ Backend Features
-
-- RESTful API routing
-- MongoDB database integration
-- Mongoose schema & models
-- Async route handling
-- Error handling middleware
-- Modular route structure
-
----
-
-# 📂 Project Folder Structure
+# 📂 Project Structure
 
 ```bash
 zenvyra/
 │
+├── controllers/
+│   ├── listings.js
+│   ├── reviews.js
+│   └── users.js
+│
 ├── models/
 │   ├── listing.js
-│   └── review.js
+│   ├── review.js
+│   └── user.js
 │
 ├── Routes/
 │   ├── listings.js
-│   └── review.js
+│   ├── reviews.js
+│   └── users.js
 │
 ├── views/
-│   ├── includes/
-│   ├── layouts/
 │   ├── listings/
-│   └── error.ejs
+│   ├── reviews/
+│   ├── users/
+│   ├── includes/
+│   └── layouts/
 │
 ├── public/
 │   ├── css/
 │   └── js/
 │
+├── uploads/
 ├── utils/
-│   ├── ExpressError.js
-│   └── WrapAsync.js
-│
 ├── init/
-│   ├── data.js
-│   └── index.js
 │
 ├── app.js
-├── package.json
-├── package-lock.json
-├── README.md
+├── middleware.js
+├── cloudConfig.js
+├── Schema.js
 ├── .env
-├── .gitignore
+├── package.json
+└── README.md
+```
 
 ---
 
-# 📬 Contact
+# ⚙️ Installation Guide
 
-If you'd like to connect with me or discuss projects, feel free to reach out.
+## 🔹 1. Clone Repository
 
-<p align="center">
+```bash
+git clone https://github.com/JEETJM/zenvyra.git
+cd zenvyra
+```
 
-<a href="https://github.com/JEETJM">
-<img src="https://img.shields.io/badge/GitHub-Follow-181717?style=for-the-badge&logo=github">
-</a>
+## 🔹 2. Install Dependencies
 
-<a href="mailto:jm382118@gmail.com">
-<img src="https://img.shields.io/badge/Email-Contact-D14836?style=for-the-badge&logo=gmail&logoColor=white">
-</a>
+```bash
+npm install
+```
 
-<a href="https://x.com/jm382118">
-<img src="https://img.shields.io/badge/Twitter-X-000000?style=for-the-badge&logo=twitter">
-</a>
+## 🔹 3. Setup Environment Variables
 
-<a href="https://t.me/jeetu900">
-<img src="https://img.shields.io/badge/Telegram-Message-26A5E4?style=for-the-badge&logo=telegram&logoColor=white">
-</a>
+Create `.env` file:
 
-</p>
+```env
+MONGO_URL=your_mongodb_url
+CLOUD_NAME=your_cloudinary_name
+CLOUD_API_KEY=your_key
+CLOUD_API_SECRET=your_secret
+MAP_TOKEN=your_mapbox_token
+SESSION_SECRET=your_secret
+```
+
+---
+
+## 🔹 4. Run Project
+
+```bash
+npm run dev
+```
+
+or
+
+```bash
+node app.js
+```
+
+---
+
+# 🔐 Security Features
+
+* Password hashing & salting
+* Session protection
+* Input validation (Joi)
+* Secure cookies
+* Protected routes
+
+---
+
+# 🚀 Future Improvements
+
+* ❤️ Wishlist system
+* 🏨 Booking system
+* 💳 Payment integration
+* 🧑‍💻 Admin dashboard
+* 💬 Real-time chat
+
+---
+
+# 📸 Screenshots (Add Later)
+
+* Homepage UI
+* Listing cards
+* Show page
+* Review system
+* Dark mode
+
+---
+
+# 🤝 Contributing
+
+Contributions are welcome!
+
+```bash
+1. Fork the repo
+2. Create a new branch
+3. Commit changes
+4. Push & create PR
+```
 
 ---
 
 # 👨‍💻 Author
 
-**Jeet Mondal**
+**JEET MONDAL**
 
-- GitHub: https://github.com/JEETJM  
-- Email: jm382118@gmail.com  
-- Twitter/X: https://x.com/jm382118  
-- Telegram: https://t.me/jeetu900 -->
+---
+
+# 💙 Support
+
+If you like this project:
+
+⭐ Star the repo
+🍴 Fork it
+📢 Share it
+
+---
